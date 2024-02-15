@@ -1,0 +1,28 @@
+.slider-container {
+    border: 1px solid;
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  .slider-image {
+    width: 100%;
+    height: 25rem;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .slider-image.active {
+    opacity: 1;
+  }
+  
+  @keyframes sliderAnimation {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
