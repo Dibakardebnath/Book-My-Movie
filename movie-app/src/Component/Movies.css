@@ -1,28 +1,60 @@
 .slider-container {
-    border: 1px solid;
-    position: relative;
-    max-width: 100%;
-    margin: 0 auto;
-    overflow: hidden;
-  }
+
+  display: flex;
+  transition: transform 0.3 ease-in-out;
   
-  .slider-image {
-    width: 100%;
-    height: 25rem;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-  }
   
-  .slider-image.active {
-    opacity: 1;
-  }
+}
+
+.slide {
+  width: 100%;
+  object-fit: cover;
+}
+
+.slider-button {
+  /* border: 10px solid; */
+  width: 80%;
+  margin: auto 10%;
   
-  @keyframes sliderAnimation {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-100%);
-    }
-  }
+  background-color: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
   
+
+/* ..........movie................ */
+
+.movie-container{
+  width: max-content;
+  background-color: black;
+  border-radius: 10px;
+}
+
+.parant-container{
+  /* width: 90%; */
+  padding: 3% 0px 3% 5%;
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  margin: auto;
+  gap: 20px;
+  background-color: gray;
+}
+.vote-container{
+  display: flex;
+  gap: 7%;
+  height: 2rem;
+  align-items: center;
+  background-color: black;
+  color: wheat;
+  border-radius: 5px;
+  
+}
