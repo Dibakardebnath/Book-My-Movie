@@ -96,8 +96,6 @@ export const BookingDetails=()=>{
       
         return (
             <div >
-
-
                 <div className="Booking-div">
                 <div className="first-div">
                     <h1>Ticket Booking Form</h1>

@@ -43,13 +43,19 @@
     position: relative;
     display: flex;
     align-items: center;
+     width: 50%;
+     background-color: rgb(166, 255, 0);
+     /* border: 1px solid black; */
+     border-radius: 20px;
   }
   
   .input-search {
-    padding: 8px 28px 8px 10px; /* Adjust padding to fit the icon properly */
+    padding: 8px 28px 8px 10px;
     border: 1px solid #ccc;
-    border-radius: 20px;
+    border-radius: 20px 0px 0px 20px;
     outline: none;
+    width: 85%;
+   
   }
   
   /* .search-icon {

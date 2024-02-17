@@ -2,24 +2,28 @@
   .Booking-div{
     border: 1px solid;
     display: flex;
-    gap: 20px;
+    /* gap: 20px; */
   }
 
   .first-div{
-    border: 2px solid red;
+    /* border: 2px solid red; */
     width: 50%;
+    background-color: rgba(122, 112, 112, 0.3);
+
   }
   
 
 
   .form-container{
+    background: transparent;
     width: 25%;
-    border: 1px solid;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     text-align: left;
     padding: 5%;
     margin: auto;
+    background-color:#40c4f3;
     
   }
 .label, text{
@@ -37,7 +41,8 @@
     font-family: Arial, sans-serif;
   } */
   .theater-seating{
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
+    background-color: rgb(168, 201, 168);
     width: 50%;
     align-items: center;
   }
