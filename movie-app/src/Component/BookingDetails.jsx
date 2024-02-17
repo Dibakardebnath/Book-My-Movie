@@ -5,8 +5,9 @@ import './BookingDetails.css';
 export const BookingDetails=()=>{
     const [formData, setFormData] = useState({
         firstName: '',
-        lastName: '',
-        email: '',
+        date: '',
+        time: '',
+        number: '',
       });
     
       const handleChange = (e) => {
@@ -20,7 +21,16 @@ export const BookingDetails=()=>{
       const handleSubmit = (e) => {
         e.preventDefault();
         // You can perform further actions with the form data here
-        console.log(formData);
+        // console.log(formData);
+        // console.log(selectedSeats.length)
+        if(selectedSeats.length==0){
+          alert("Choose your seats first!")
+        }
+       else if(formData.number==selectedSeats.length){
+          console.log("good");
+        }else{
+          alert("please enter valid number")
+        }
       };
       const [seats, setSeats] = useState([
         ['A1', 'A2', 'A3', 'A4', 'A5', 'A6', 'A7', 'A8'],
@@ -91,23 +101,37 @@ export const BookingDetails=()=>{
                 <div className="Booking-div">
                 <div className="first-div">
                     <h1>Ticket Booking Form</h1>
-                    <form className="form-container">
+                    <form className="form-container" onSubmit={handleSubmit}>
                 <label className="label" htmlFor="fname">Enter Your Name</label>
-                <input className="input-text" type="text" id="fname" name="firstname" placeholder="Your name.." />
+                <input className="input-text" type="text" id="fname"
+                 name="firstName"
+                 value={formData.firstName}
+                 onChange={handleChange} placeholder="Your name.." />
           
                 <label className="label" htmlFor="lname">Enter Date</label>
-                <input className="input-text" type="date" id="lname" name="lastname" placeholder="Your last name.." />
+                <input className="input-text" type="date" id="lname" 
+                 name="date"
+                 value={formData.date}
+                 onChange={handleChange}/>
           
                 <label className="label" htmlFor="country">Select Movie Time</label>
-                <select className="select-text" id="country" name="country">
-                  <option value="australia">09:00 AM</option>
-                  <option value="canada">12:00 PM</option>
-                  <option value="usa">03:00PM</option>
-                  <option value="usa">06:00PM</option>
+                <select className="select-text" id="country" name="time"
+               
+                 value={formData.time}
+                 onChange={handleChange}>
+                  <option value="09:00 AM">09:00 AM</option>
+                  <option value="12:00 PM">12:00 PM</option>
+                  <option value="03:00PM">03:00PM</option>
+                  <option value="06:00PM">06:00PM</option>
+                  <option value="09:00 PM">09:00 PM</option>
+
                 </select>
 
                 <label className="label" htmlFor="country">Select No.of Ticket</label>
-                <select className="select-text" id="country" name="country">
+                <select className="select-text" id="country" name="number"
+                  value={formData.number}
+                  onChange={handleChange}
+                >
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>

@@ -47,10 +47,10 @@ export const Movies = () => {
   },[])
   const fetchData=async()=>{
     try {
-      await axios.get("https://api.themoviedb.org/3/movie/popular?api_key=848f6118caa493508c0526a82189f5ab")
+      await axios.get("http://localhost:8000/AllMovies")
       .then((res)=>{
-      setData(res.data.results.slice(0, 12))
-      // console.log(res.data.results)
+      setData(res.data.users[0].Search)
+      // console.log(res.data.users[0].Search)
       })
     } catch (error) {
       console.log(error)
@@ -74,20 +74,16 @@ export const Movies = () => {
 <div className="parant-container">
 {data.map((ele)=>
   
-  <div key={ele.id} className="movie-container">
-   <img style={{borderRadius:"10px",width:"200px"}}  src={`https://image.tmdb.org/t/p/w500${ele.poster_path}`} alt="" />
+  <div  key={ele.id} className="movie-container">
+   <img style={{borderRadius:"10px",width:"200px"}}  src={ele.Poster} alt="" />
    <div className="vote-container">
-   <p> <i style={{ color: '#dc344b' }} class="fa-solid fa-star"></i> {Number(ele.vote_average.toFixed(1))}/10</p>
+   <p> <i style={{ color: '#dc344b' }} class="fa-solid fa-star"></i> {ele.Type}</p>
 
-    <p>{ele.vote_count} Votes</p>   
+    <p>{ele.Year}</p>   
     </div>
   </div>
    )}
 </div>
- 
-
-
-
     </div>
   );
 };
