@@ -1,10 +1,16 @@
 import { useEffect, useState } from "react";
 import "./Movies.css";
-import axios from 'axios';
+
+import { useDispatch, useSelector } from 'react-redux';
+
+import { useNavigate } from "react-router-dom";
+import { fetchData } from "../Redux/Api";
 
 export const Movies = () => {
-  const [data,setData]=useState([])
-  console.log(data)
+ const dispatch=useDispatch();
+const {MovieData}=useSelector((store)=>store)
+console.log(MovieData)
+  
   // ..................Slider............................        848f6118caa493508c0526a82189f5ab
   const sliderImages = [
     "https://wowslider.com/sliders/demo-74/data1/images/newyorkcity336475_1280.jpg",
@@ -41,21 +47,18 @@ export const Movies = () => {
     );
   };
 
+  const navigate = useNavigate();
+
+  const handlNextPage = (id) => {
+  
+    navigate(`/bookingdetails/${id}`);
+  };
+
 
   useEffect(()=>{
-       fetchData();
+    dispatch(fetchData())
   },[])
-  const fetchData=async()=>{
-    try {
-      await axios.get("http://localhost:8000/AllMovies")
-      .then((res)=>{
-      setData(res.data.users[0].Search)
-      // console.log(res.data.users[0].Search)
-      })
-    } catch (error) {
-      console.log(error)
-    }
-  }
+ 
 
   return (
     <div>
@@ -72,14 +75,14 @@ export const Movies = () => {
       </div>
       <div><h1>Movies</h1></div>
 <div className="parant-container">
-{data.map((ele)=>
+{MovieData.map((ele)=>
   
-  <div  key={ele.id} className="movie-container">
+  <div onClick={() => handlNextPage(ele.imdbID)}  key={ele.id} className="movie-container">
    <img style={{borderRadius:"10px",width:"200px"}}  src={ele.Poster} alt="" />
    <div className="vote-container">
    <p> <i style={{ color: '#dc344b' }} class="fa-solid fa-star"></i> {ele.Type}</p>
 
-    <p>{ele.Year}</p>   
+    <p>Year {ele.Year} </p>   
     </div>
   </div>
    )}

@@ -8,7 +8,8 @@ export const Footer = () => {
         <div className="footer-content">
          
           <div className="contact-info">
-            <p>Contact us: example@example.com</p>
+            <h1>Book<span  style={{display:"inline-block",
+  transform:"rotate(-30deg)",color:"red",fontFamily:"serif"}}>my</span>movie</h1>
           </div>
           <div className="social-media">
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
@@ -21,9 +22,10 @@ export const Footer = () => {
               <i className="fab fa-instagram"></i>
             </a>
           </div>
-        </div>
+       
         <div className="copyright">
           <p>&copy; 2024 Movie Book App. All rights reserved.</p>
+        </div>
         </div>
       </div>
     </footer>

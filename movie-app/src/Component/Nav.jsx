@@ -6,7 +6,7 @@ export const Nav=()=>{
           return (
             <nav className="navbar">
               <div className="navbar-container">
-                <Link to={'/AllMovies'} className="navbar-logo">Book<span style={{display:"inline-block",
+                <Link to={'/'} className="navbar-logo">Book<span style={{display:"inline-block",
   transform:"rotate(-30deg)",color:"red",fontFamily:"serif"}}>my</span>Movie</Link>
                 <div className="search-container">
           <input className="input-search" type="text" placeholder="Search your favorite movie" />

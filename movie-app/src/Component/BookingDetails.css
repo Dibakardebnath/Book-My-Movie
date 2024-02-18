@@ -31,15 +31,13 @@
 }
 .button{
     margin-top: 2%;
+    border-radius: 5px;
+    background-color: teal;
+    color: wheat;
+    border: none;
 }
 /*.................................. second div.................................. */
-/* .theater-seating-container {
-    border: 10px solid blue;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-  } */
+
   .theater-seating{
     /* border: 2px solid blue; */
     background-color: rgb(168, 201, 168);
@@ -84,3 +82,18 @@
     margin-top: 20px;
   }
   
+
+  .details-box{
+    border: 1px solid;
+  }
+  .details-box2{
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .details-box3{
+    border: 1px solid;
+    height: auto;
+    text-align: left;
+  }
